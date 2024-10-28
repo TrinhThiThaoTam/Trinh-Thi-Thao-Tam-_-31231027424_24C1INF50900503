@@ -15,7 +15,9 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             //Question_02();
             //Question_03();
             //Question_04();
-            Question_05();
+            //Question_05();
+            //Question_06();
+            Question_07();
             Console.ReadKey();
         }
         //Cau 1: Write a C# Sharp program to check whether a given number is even or odd.
@@ -98,6 +100,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             }
             else Console.Write($"Day la tam giac can");
         }
+        //Cau 5: Write a program to read 10 numbers and find their average and sum.
         public static void Question_05()
         {
             int i, sum = 0;
@@ -111,6 +114,35 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             }
             Console.WriteLine($"Tong 10 so la: {sum}");
             Console.Write($"Trung binh 10 so la: avg = {sum / 10.0f}");
+        }
+        //Cau 6: Write a program to display the multiplication table of a given integer
+        public static void Question_06()
+        {
+            Console.Write("Nhap 1 so nguyen co trong bang nhan");
+            int number = int.Parse(Console.ReadLine());
+            for (int i = 2; i <= number; i++)
+            {
+                for (int j = 1; j <= 10; j++)
+                {
+                    Console.WriteLine($"{i} * {j} = {i * j}");
+                }
+            }
+            Console.WriteLine();
+        }
+        //Cau 7: Write a program to display a pattern like triangles with a number.
+        public static void Question_07()
+        {
+            Console.Write("Nhap so dong:");
+            int rows = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j + " ");
+                }
+            }
+            Console.WriteLine();
         }
     }
 }
