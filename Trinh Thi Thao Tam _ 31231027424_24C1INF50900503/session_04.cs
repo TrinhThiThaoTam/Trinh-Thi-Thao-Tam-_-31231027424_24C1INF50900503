@@ -18,7 +18,8 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             //Question_04();
             //Question_05();
             //Question_06();
-            Question_07();
+            //Question_07();
+            Question_08();
             Console.ReadKey();
         }
         //Cau 1: Write a C# Sharp program to check whether a given number is even or odd.
@@ -146,23 +147,44 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             {
                 for (int j = 1; j <= i; j++) //j la col
                 {
-                    Console.Write(" " + a); //a++ so tang dan
+                    Console.Write("" + a); //a++ so tang dan
                     a++;
                 }
                 Console.WriteLine();
             }
+            int b = 1;
             Console.WriteLine("Tam giac o giua");
             for (int i = 1; i <= rows; i++)
             {
-                Console.Write(" ");
+                for (int space = rows; space > i; space--)
+                {
+                    Console.Write(" ");
+                }
                 for (int j = 1; j <= i; j++)
                 {
-                    Console.Write(" " + a);
-                    a++;
+                    Console.Write(b + " ");
+                    b++;
                 }
                 Console.WriteLine();
             }
-            Console.ReadKey();
+        }
+        //Cau 8: Write a program to display the n terms of harmonic series and their sum. 1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/n terms
+        public static void Question_08()
+        {
+            Console.Write("Nhap n =");
+            int n = int.Parse(Console.ReadLine());
+            float s = 0.0f;
+            Console.Write("Harmonic series:");
+            for (int i = 1; i <=n; i++)
+            {
+                Console.Write("1/{0}", i);
+                if (i<n)
+                {
+                    Console.Write(" + ");
+                }
+                s += 1.0f / i; //vi du: C += A tuong duong voi C = C + A, nghia la s = s + 1.0f/i
+            }
+            Console.WriteLine($"Tong la : {s}");
         }
     }
 }
