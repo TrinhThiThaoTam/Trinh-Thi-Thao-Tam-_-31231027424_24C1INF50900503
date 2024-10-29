@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -118,32 +119,52 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
         //Cau 6: Write a program to display the multiplication table of a given integer
         public static void Question_06()
         {
-            Console.Write("Nhap 1 so nguyen co trong bang nhan");
+            Console.Write("Nhap 1 so nguyen de thuc hien bang cuu chuong");
             int number = int.Parse(Console.ReadLine());
-            for (int i = 2; i <= number; i++)
+            for (int i = 2; i <= 10; i++)
             {
-                for (int j = 1; j <= 10; j++)
-                {
-                    Console.WriteLine($"{i} * {j} = {i * j}");
-                }
+                Console.WriteLine($"{number} * {i} = {number * i}");
             }
-            Console.WriteLine();
         }
         //Cau 7: Write a program to display a pattern like triangles with a number.
         public static void Question_07()
         {
             Console.Write("Nhap so dong:");
             int rows = int.Parse(Console.ReadLine());
-            Console.WriteLine();
+            int a = 1;
+            Console.WriteLine("Tam giac can le trai");
             for (int i = 1; i <= rows; i++)
             {
                 for (int j = 1; j <= i; j++)
                 {
-                    Console.Write(j + " ");
+                    Console.Write(j + "");
                 }
+                Console.WriteLine();
             }
-            Console.WriteLine();
+            Console.WriteLine("Tam giac can le trai nhung ma so tang dan");
+            for (int i = 1; i <= rows; i++) //i la row
+            {
+                for (int j = 1; j <= i; j++) //j la col
+                {
+                    Console.Write(" " + a); //a++ so tang dan
+                    a++;
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Tam giac o giua");
+            for (int i = 1; i <= rows; i++)
+            {
+                Console.Write(" ");
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(" " + a);
+                    a++;
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
         }
     }
 }
+
 
