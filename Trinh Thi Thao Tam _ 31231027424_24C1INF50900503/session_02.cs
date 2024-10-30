@@ -8,7 +8,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
 {
     internal class session_02
     {
-        public static void Main()
+        public static void Main2()
         {
             //Question_01();
             //Question_02();
