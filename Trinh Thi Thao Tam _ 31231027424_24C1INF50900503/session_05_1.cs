@@ -78,7 +78,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             }
             return sum == n;
         }
-        public static void Main()
+        public static void Main6()
         {
             //int m = maxofthreenumbers(7, 8, 9);
             //Console.WriteLine(m);
