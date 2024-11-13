@@ -8,7 +8,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
 {
     internal class session_06
     {
-        public static void Main()
+        public static void Main7()
         {
             //Enter item values
             Console.Write("Nhap N:");
