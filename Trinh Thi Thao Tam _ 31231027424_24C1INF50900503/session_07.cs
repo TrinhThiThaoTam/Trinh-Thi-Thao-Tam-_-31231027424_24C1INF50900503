@@ -78,19 +78,50 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
                 Console.WriteLine($"Gia tri nho nhat dong {i} la: {min}");
             }
         }
-        private static void Main(string[] args)
+        //Transpose the matrix
+        static void ChuyenVi(int[,] a, ref int[,]b) //lay truc tiep gia tri truyen vao de su dung luon de khong copy gia tri cua ma tran a
+        {
+            int rowsa = a.GetLength(0);
+            int colsa = a.GetLength(1);
+            b = new int[colsa , rowsa];
+            for (int i = 0; i < rowsa;i++)
+            {
+                for (int j = 0; j < colsa; j++)
+                {
+                    b[j,i] = a[i,j]; 
+                }
+            }
+            Console.WriteLine($"Ma tran sau khi chuyen vi la:");
+        }
+        //Print the transposed matrix
+        static void InMaTranChuyenVi(int[,] b)
+        {
+            for (int i = 0;i < b.GetLength(0);i++)
+            {
+                for (int j=0; j < b.GetLength(1); j++)
+                {
+                    Console.Write(b[i, j] + "\t");
+                }
+                Console.WriteLine(); //new line after each row 
+            }
+        }
+        private static void Main8(string[] args)
         {
             int[,] a;
+            int[,] b = null; // khoi tao gia tri
             Console.Write($"Nhap so dong: "); int rows = int.Parse( Console.ReadLine() );
             Console.Write($"Nhap so cot: "); int columns = int.Parse( Console.ReadLine() );
             a = new int[rows, columns];
+            b = new int[columns, rows];
             NhapMangNgauNhien(a, rows, columns);
             InMang(a);
             //Console.Write("Nhap so can tim: ");
             //int val = int.Parse( Console.ReadLine() );
             //InGiaTri(a, val);
-            TimGiaTriLonNhat(a);
-            TimGiaTriNhoNhatCuaDong(a);
+            //TimGiaTriLonNhat(a);
+            //TimGiaTriNhoNhatCuaDong(a);
+            ChuyenVi(a,ref b);
+            InMaTranChuyenVi(b);
         }
     }
 }
