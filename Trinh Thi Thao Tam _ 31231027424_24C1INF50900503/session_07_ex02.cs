@@ -67,48 +67,47 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             Console.WriteLine($"So lon nhat cua ma tran la: {maxoverall}");
         }
         //Sort values ascending of each row
-        static void SortValueEachRow(int[][] jaggedArray, int index)
+        static void SortValueEachRow(int[][] jaggedArray)
         {
-            int[] line = jaggedArray[index];
-            for (int i = 0; i < line.Length; i++)
+            foreach (int[] row in jaggedArray)
             {
-                for (int j = 0; j < i; j++)
+                for (int i = 0; i < row.Length; i++)
                 {
-                    if (line[i] < line[j])
+                    for (int j = 0; j < i; j++)
                     {
-                        int temp = line[i];
-                        line[i] = line[j];
-                        line[j] = temp;
+                        if (row[i] < row[j])
+                        {
+                            int temp = row[i];
+                            row[i] = row[j];
+                            row[j] = temp;
+                        }
                     }
                 }
             }
-            Console.WriteLine();
         }
         static bool isPrime(int n)
         {
             if (n <= 1) return false;
-            for (int i = 2; i < n; i++)
+            for (int i = 2; i < Math.Sqrt(n); i++)
             {
-                for (int j = 2; j < i/2; j++)
-                {
-                    if (i % j == 0) return false;
-                }
+                if (n % i == 0) return false;
             }
             return true;
         }
         static void PrintPrimeNumber(int[][] jaggedArray)
         {
             Console.WriteLine("So nguyen to trong ma tran la:");
-            for (int i = 2; i < jaggedArray.Length; i++)
+            for (int i = 0; i < jaggedArray.Length; i++)
             {
                 for (int j = 0; j < jaggedArray[i].Length; j++)
                 {
                     if (isPrime(jaggedArray[i][j]))
                     {
-                        Console.Write(jaggedArray[i][j]);
+                        Console.Write(jaggedArray[i][j] + "\t");
                     }
                 }
             }
+            Console.WriteLine();
         }
         private static void Main()
         {
@@ -133,8 +132,8 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
                 Console.WriteLine();
             }
             SoLonNhat(jaggedArray);
-            Console.Write("Nhap dong can sort: "); int index = int.Parse(Console.ReadLine());
-            SortValueEachRow(jaggedArray, index);
+            Console.Write("Nhap dong can sort: "); 
+            SortValueEachRow(jaggedArray);
             PrintPrimeNumber(jaggedArray);
         }
     }
