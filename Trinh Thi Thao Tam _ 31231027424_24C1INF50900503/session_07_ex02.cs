@@ -109,7 +109,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             }
             Console.WriteLine();
         }
-        private static void Main()
+        private static void Main9()
         {
             //CreateJaggedArray();
             Console.Write("Nhap so dong: ");
