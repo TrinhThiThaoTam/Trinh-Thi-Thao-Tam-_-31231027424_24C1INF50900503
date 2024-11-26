@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,9 +52,74 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             }
             return s1.Length > s2.Length ? 1 : s1.Length < s2.Length ? -1 : 0;  
         }
+        static void countNumbersofAlphaDigitSpecial(string s)
+        {
+            int so = 0;
+            int chu = 0;
+            int speical = 0;
+            foreach (char c in s)
+            {
+                if ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z'))
+                    chu++;
+                else if (c >= '0' && c <= '9')
+                    so++;
+                else 
+                    speical++;
+            }
+            Console.Write($"Co {chu} chu cai, {so} so và {speical} ky tu khac trong chuoi");
+            Console.WriteLine();
+        }
+        static void countVowelsandConsonants(string s)
+        {
+            int vowel = 0;
+            int consonant = 0;
+            foreach (char c in s)
+            {
+                if ((c == 'u') || (c == 'e') || (c == 'o') || (c == 'a') || (c == 'i') || (c == 'U') || (c == 'E') || (c == 'O') || (c == 'A') || (c == 'I'))
+                    vowel++;
+                else consonant++;
+            }
+            Console.Write($"Co {vowel} nguyen am va {consonant} phu am trong chuoi");
+            Console.WriteLine();
+        }
+        static void subStringPresent(string s, string ss)
+        {
+            if (s.Contains(ss))
+            {
+                Console.WriteLine("Ton tai chuoi con trong chuoi");
+            }    
+            else
+            {
+                Console.WriteLine("Khong ton tai chuoi con trong chuoi");
+            }
+        }
+        static void searchPositionOfString(string s, string ss)
+        {
+            int pos = s.IndexOf(ss);
+            if (pos != -1) // index of se tra ve vi tri dau tien cua substring trong chuoi, neu khong tim duoc chuoi con se tra gia tri ve -1
+            {
+                Console.WriteLine($"Chuoi con nam o vi tri {pos}"); // neu chuoi con nam o dau tien thi tra ve gia tri 0
+            }    
+            else
+            {
+                Console.WriteLine($"Chuoi con khong ton tai trong chuoi");
+            }
+        }
+        static bool isAlphabet(string s)
+        {
+            foreach (char c in s)
+            {
+                if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+                {
+                    Console.WriteLine($"Ky tu {c} la chu cai");
+                    return true;
+                }
+            }
+            return false;
+        }
         private static void Main()
         {
-            string s = "Verbatim string literals are more convenient for multi-line strings";
+            string s = "Verbatim string literals are more convenient for multi-line strings 5";
             Console.WriteLine(s);
             lenOfString(s);
             seperateCharacter(s);
@@ -65,6 +131,13 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             string s2 = "hello";
             compareTwoStrings(s1, s2);
             Console.WriteLine(s1.CompareTo(s2));
+            countNumbersofAlphaDigitSpecial(s);
+            countVowelsandConsonants(s);
+            Console.Write("Nhap chuoi con: ");
+            string ss = Console.ReadLine();
+            subStringPresent(s, ss);
+            searchPositionOfString(s, ss);
+            isAlphabet(s);
         }
     }
 }
