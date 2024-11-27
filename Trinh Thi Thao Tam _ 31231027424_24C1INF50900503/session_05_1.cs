@@ -80,8 +80,8 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
         }
         public static void Main6()
         {
-            //int m = maxofthreenumbers(7, 8, 9);
-            //Console.WriteLine(m);
+            int m = maxofthreenumbers(7, 8, 9);
+            Console.WriteLine(m);
             Console.Write("Nhap mot so n:");
             int n = int.Parse(Console.ReadLine());
             if (isPrime(n))

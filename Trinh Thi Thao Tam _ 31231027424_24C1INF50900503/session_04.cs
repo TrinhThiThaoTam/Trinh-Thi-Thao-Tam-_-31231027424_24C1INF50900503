@@ -100,7 +100,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
             {
                 Console.Write($"Day la tam giac can");
             }
-            else Console.Write($"Day la tam giac can");
+            else Console.Write($"Day la tam giac thuong");
         }
         //Cau 5: Write a program to read 10 numbers and find their average and sum.
         public static void Question_05()

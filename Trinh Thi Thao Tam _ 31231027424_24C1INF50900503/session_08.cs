@@ -19,7 +19,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
         static void seperateCharacter(string s)
         {
             foreach (char c in s)
-                Console.WriteLine(c);
+                Console.Write(c + " ");
         }
         static void reverseOrder(string s)
         {

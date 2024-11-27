@@ -23,7 +23,7 @@ namespace Trinh_Thi_Thao_Tam___31231027424_24C1INF50900503
         {
             for (int i = 0; i < a.Length; i++)
             {
-                Console.Write($"Nhap phan tu thu {i + 1}:");
+                Console.Write($"a[{i + 1}]=");
                 a[i] = int.Parse(Console.ReadLine());
             }
         }
